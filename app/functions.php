@@ -16,20 +16,33 @@
 			else{
 					if(mysqli_num_rows($query)>0){//если есть результат при SELECT
 						$res = mysqli_fetch_array($query,3);
-						$name = $res['name'];
-						$date_born = $res['date_born'];
-						$years_old = $res['years_old'];
-						$kino = $res['kino'];//любимые жанры кино
-						$yvlech = $res['yvlech'];//увлечения
-						$sex = $res['sex_hochy'];//пол нужного кондидата
-						$vizrast_ot = $res['vozrast_ot'];//от какого возраста нужен партнёр
-						$vizrast_do = $res['vozrast_do'];//до какого возраста нужен партнёр
-						$id_sex = $res['id_sex'];//id к оторому последний раз подал заявку на знакомство пользователь
-						$zapoln_ank = $res['zapoln_ank'];//заполнена или не заполнена анкета
-						$id_posled_see = $res['id_posled_see'];//id последних людей, которые смотрели профель пользователя
-						$id_black_list = $res['id_black_list'];//id в чёрном списке, к оторым нельзя обращаться
-						$city = $res['city'];//город прживания
-						$data_arr = array($name,$years_old, $kino, $yvlech, $sex, $vizrast_ot, $vizrast_do,$id_sex,$date_born,$zapoln_ank,$id_posled_see,$id_black_list,$city);
+						$name = ;
+						$date_born = ;
+						$years_old = 
+						$kino = 
+						$yvlech = 
+						$sex = 
+						$vizrast_ot = 
+						$vizrast_do = 
+						$id_sex = 
+						$zapoln_ank = 
+						$id_posled_see = 
+						$id_black_list = 
+						$city = ;
+						$data_arr = array(
+							'name_user' => $res['name'],
+							'user_years_old' => $res['years_old'],
+							'user_like_kino' => $res['kino'],//любимые жанры кино
+							'user_yvlech' => $res['yvlech'],//увлечения
+							'user_need_sex' => $res['sex_hochy'],//пол нужного кондидата
+							'user_need_vizrast_ot' => $res['vozrast_ot'],//от какого возраста нужен партнёр
+							'user_need_vizrast_do' => $res['vozrast_do'],//до какого возраста нужен партнёр
+							'id_sex_zapros' => $res['id_sex'],//id к оторому последний раз подал заявку на знакомство пользователь
+							'user_date_born' => $res['date_born'];
+							'user_zapoln_ank' => $res['zapoln_ank'],//заполнена или не заполнена анкета
+							'id_posled_see_user' => $res['id_posled_see'],//id последних людей, которые смотрели профель пользователя,
+							'id_black_list_for_user' => $res['id_black_list'],
+							'user_city' => $res['city']);//город прживания
 					}
 					else{
 						$data_arr = 0;
@@ -98,7 +111,7 @@
 						$id = $res['id'];
 						$id_str = $res['id_str'];//id страницы вконтакте
 						$name = $res['name'];
-						$years_old = $res['years_old'];//количество полных лет
+						$years_old = 
 						$kino = $res['kino'];//любимые жанры кино
 						$yvlech = $res['yvlech'];//увлечения
 						$sex = $res['sex_hochy'];//пол нужного кондидата
@@ -106,7 +119,19 @@
 						$vizrast_do = $res['vozrast_do'];//до какого возраста нужен партнёр
 						$date_born = $res['date_born'];//дата рождения
 						$city = $res['city'];//город прживания
-						$data_arr = array($id,$id_str,$name,$years_old, $kino, $yvlech, $sex, $vizrast_ot, $vizrast_do,$date_born,$city);
+						$data_arr = array(
+							'id_partner' -> $res['id'],
+							'id_vk_str' -> $res['id_str'],//id страницы вконтакте
+							'name_partner' -> $res['name'],
+							'partner_years_old' -> $res['years_old'],//количество полных лет
+							'partner_kino' -> $res['kino'],
+							'partner_yvlech' -> $res['yvlech'],//увлечения
+							'partner_need_sex' -> $res['sex_hochy'],//пол нужного кондидата
+							'partner_vozrast_ot' ->  $res['vozrast_ot'],//от какого возраста нужен партнёр
+							'partner_vozrast_do' -> $res['vozrast_do'],//до какого возраста нужен партнёр
+							'parnter_date_born' -> $res['date_born'],//дата рождения
+							'partner_city' -> $res['city']//город прживания
+							);
 					}
 					else{
 						$data_arr =0;
